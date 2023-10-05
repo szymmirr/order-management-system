@@ -1,0 +1,30 @@
+name: Build .NET Framework App
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: windows-2019
+ 
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.3.1
+
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.2.0
+
+    - name: Restore NuGet packages
+      run: nuget restore Aptor.sln
+
+    - name: Build solution
+      run: msbuild Aptor.sln /p:Configuration=Release /p:DeployOnBuild=true
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: order-management-system
+        path: Aptor\obj\Release\Package
