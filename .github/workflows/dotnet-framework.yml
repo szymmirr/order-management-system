@@ -24,7 +24,7 @@ jobs:
 
     - run: ls packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\
 
-    - run: ls packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net472\
+    - run: ls packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\
 
     - run: ls packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\
 
