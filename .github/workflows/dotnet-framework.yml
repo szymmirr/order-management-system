@@ -26,7 +26,7 @@ jobs:
       run: msbuild Aptor.sln /p:Configuration=Release /p:DeployOnBuild=true
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: order-management-system-artifact
         path: Aptor\obj\Release\Package
