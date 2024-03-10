@@ -30,3 +30,9 @@ jobs:
       with:
         name: order-management-system-artifact
         path: Aptor\obj\Release\Package
+
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v4
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        slug: szymmirr/order-management-system
